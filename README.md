@@ -25,3 +25,15 @@ Why thread communication methods wait(), notify() and notifyAll() are in Object 
 In Java every Object has a monitor and wait, notify methods are used to wait for the Object monitor or to notify other threads that Object monitor is free now. There is no monitor on threads in java and synchronization can be used with any Object, that’s why it’s part of Object class so that every class in java has these essential methods for inter thread communication.
 
 When a Thread calls wait() on any Object, it must have the monitor on the Object that it will leave and goes in wait state until any other thread call notify() on this Object. Similarly when a thread calls notify() on any Object, it leaves the monitor on the Object and other waiting threads can get the monitor on the Object. Since all these methods require Thread to have the Object monitor, that can be achieved only by synchronization, they need to be called from synchronized method or block.
+
+Atomic operations:
+Atomic operations are performed in a single unit of task without interference from other operations, atomic operations are necessary in multi-threaded environment to avoid data inconsistency
+e.g. using count.increamentAndGet() instead of count++ in a multi threaded environement.
+
+Lock vs synchronized:
+--------------------------
+Java Lock API provides more visibility and options for locking, unlike synchronized where a thread might end up waiting indefinitely for the lock, we can use tryLock() to make sure thread waits for specific time only.
+Synchronization code is much cleaner and easy to maintain whereas with Lock we are forced to have try-finally block to make sure Lock is released even if some exception is thrown between lock() and unlock() method calls.
+synchronization blocks or methods can cover only one method whereas we can acquire the lock in one method and release it in another method with Lock API.
+synchronized keyword doesn’t provide fairness whereas we can set fairness to true while creating ReentrantLock object so that longest waiting thread gets the lock first.
+We can create different conditions for Lock and different thread can await() for different conditions.
