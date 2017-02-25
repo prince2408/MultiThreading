@@ -11,3 +11,11 @@ Daemon Thread:
 ---------------
 A Daemon thread is a thread that doesn't prevent the JVM from exiting when the program finishes but the thread is still runnning. An example of daemon thread in garbage collector.
 setDaemon(boolean) can be used to change the thread daemon properties before the thread start.
+
+Thread Dump
+------------
+Thread dump is list of all the threads active in the JVM, thread dumps are very helpful in analyzing bottlenecks in the application and analyzing deadlock situations. There are many ways using which we can generate Thread dump – Using Profiler, Kill -3 command, jstack tool etc
+
+ThreadLocal:
+-------------
+The ThreadLocal class in Java enables you to create variables that can only be read and written by the same thread. Thus, even if two threads are executing the same code, and the code has a reference to a ThreadLocal variable, then the two threads cannot see each other's ThreadLocal variables.
