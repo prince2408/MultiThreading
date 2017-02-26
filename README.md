@@ -43,3 +43,7 @@ Executor Framework:
 Concurrent utility framwork in java and is used for standardizing invokation, scheduling, execution and control of asynchronous tasks in parallel threads.
 Once the thread has delegated the task to the ExecutorService, the thread continues its own execution independent of the execution of that task.
 Executor Service Shutdown: On invoking the shutdown() command all the executor service thread gets terminated but it won't get shutdowned immediately but it will no longer accept new tasks, and once all threads have finished current tasks, the ExecutorService shuts down. 
+
+Diference between Runnable() and Callable()
+-------------------------------------------
+Callable can return the result of an operation performed inside call method.So basically Callable can return any object and able to throw an exception.
