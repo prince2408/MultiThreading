@@ -37,3 +37,9 @@ Synchronization code is much cleaner and easy to maintain whereas with Lock we a
 synchronization blocks or methods can cover only one method whereas we can acquire the lock in one method and release it in another method with Lock API.
 synchronized keyword doesn’t provide fairness whereas we can set fairness to true while creating ReentrantLock object so that longest waiting thread gets the lock first.
 We can create different conditions for Lock and different thread can await() for different conditions.
+
+Executor Framework:
+--------------------
+Concurrent utility framwork in java and is used for standardizing invokation, scheduling, execution and control of asynchronous tasks in parallel threads.
+Once the thread has delegated the task to the ExecutorService, the thread continues its own execution independent of the execution of that task.
+Executor Service Shutdown: On invoking the shutdown() command all the executor service thread gets terminated but it won't get shutdowned immediately but it will no longer accept new tasks, and once all threads have finished current tasks, the ExecutorService shuts down. 
