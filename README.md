@@ -47,3 +47,11 @@ Executor Service Shutdown: On invoking the shutdown() command all the executor s
 Diference between Runnable() and Callable()
 -------------------------------------------
 Callable can return the result of an operation performed inside call method.So basically Callable can return any object and able to throw an exception.
+
+LIvelock Vs Deadlock : A livelock is similar to a deadlock, except that the states of the threads or processes involved in the livelock constantly change with regard to one another, without any one progressing further. Livelock is a special case of resource starvation. A real-world example of livelock occurs when two people meet in a narrow corridor, and each tries to be polite by moving aside to let the other pass, but they end up swaying from side to side without making any progress because they both repeatedly move the same way at the same time
+
+Other Points:
+-----------------
+1) A method called holdsLock() on java.lang.Thread, it returns true if and only if the current thread holds the monitor lock on the specified object, using this it can be verified the thread holdds the lock or not.
+2)
+
